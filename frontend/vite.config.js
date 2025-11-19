@@ -1,5 +1,13 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig({
-  base: "/excelwizpro-frontend/", // IMPORTANT for GitHub Pages
+  base: "/excelwizpro-frontend/",
+  build: {
+    rollupOptions: {
+      input: {
+        taskpane: resolve(__dirname, "taskpane.html")
+      }
+    }
+  }
 });
